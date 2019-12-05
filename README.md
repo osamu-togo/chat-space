@@ -29,7 +29,7 @@
 |------|----|-------|
 |id|integer|null: false|
 |name|string|null: false|
-|users_id|integer|null: false|forign_key: ture|
+
 
 ### Association
 - has_many :users,through: :groups_uers
