@@ -1,0 +1,40 @@
+.main_chat
+  .main_chat__group-info
+    .main_chat__group-info__name
+      .main_chat__group-info__name__group-name
+        マルガリータ
+      .main_chat__group-info__name__group-member
+        Member : ちょんまげ
+    .main_chat__group-info__edit
+      = link_to "#", class: "edit__btn" do
+        = @Edit
+        Edit
+  .main_chat__message-list
+    .main_chat__message-list__message
+      .main_chat__message-list__message__info
+        .main_chat__message-list__message__info__taker
+          吾輩
+        .main_chat__message-list__message__info__date
+          2020/12/12
+      .main_chat__message-list__message__text
+        蝋人形にしてやろうかー
+    .main_chat__message-list__message
+      .main_chat__message-list__message__info
+        .main_chat__message-list__message__info__taker
+          吾輩
+        .main_chat__message-list__message__info__date
+          2020/12/12
+      .main_chat__message-list__message__text
+        蝋人形にしてやろうかー
+  .main_chat__message-form 
+    .main_chat__message-form__new
+      .main_chat__message-form__new__input
+        .main_chat__message-form__new__input__text
+        %input{placeholder: "type a message", class: "input__text", type: "text"}
+        %label{class: "icon__file", for: "message_image"}
+          = fa_icon 'image', class: 'image'
+          %input{type: "file", id: "message_image", class: "image_file"}
+      .main_chat__message-form__new__send
+        = link_to "#",class: "send__btn" do
+          = @send
+          Send
