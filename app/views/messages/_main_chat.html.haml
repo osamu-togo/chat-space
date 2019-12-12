@@ -2,12 +2,12 @@
   .main_chat__group-info
     .main_chat__group-info__name
       .main_chat__group-info__name__group-name
-        マルガリータ
+        = @group.name
       .main_chat__group-info__name__group-member
-        Member : ちょんまげ
+        - @group.group_users.each do |group_user|
+          = "Member:#{group_user.user.name}"
     .main_chat__group-info__edit
-      = link_to "#", class: "edit__btn" do
-        = @Edit
+      = link_to edit_group_path(@group), class: "edit__btn" do
         Edit
   .main_chat__message-list
     .main_chat__message-list__message
@@ -27,14 +27,12 @@
       .main_chat__message-list__message__text
         蝋人形にしてやろうかー
   .main_chat__message-form 
-    .main_chat__message-form__new
-      .main_chat__message-form__new__input
-        .main_chat__message-form__new__input__text
-        %input{placeholder: "type a message", class: "input__text", type: "text"}
-        %label{class: "icon__file", for: "message_image"}
+    = form_for [@group, @message] do |f|
+      .main_chat__message-form__input
+        = f.text_field :content, placeholder: "type a message", class: "input__text"
+        = f.label :image, class: "icon__file", for: "message_image" do
           = fa_icon 'image', class: 'image'
-          %input{type: "file", id: "message_image", class: "image_file"}
-      .main_chat__message-form__new__send
-        = link_to "#",class: "send__btn" do
-          = @send
-          Send
+          = f.file_field :image, id: "message_image", class: "image_file"
+      = f.submit 'Send', class: "send__btn" 
+.messages
+  = render @messages

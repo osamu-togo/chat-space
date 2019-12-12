@@ -148,18 +148,16 @@
     height: 90px;
     padding: 20px 40px;
     width: calc(100vw - 300px);
-    &__new{
-      display: flex;
       &__input{
         position: relative;
         width: 100%;
         .input__text{
-            height: 50px;
-            width: 100%;
-            padding: 0 40px 0 10px;
-            color: #434a54;
-            border-style: none;
-          }
+          height: 50px;
+          width: 100%;
+          padding: 0 40px 0 10px;
+          color: #434a54;
+          border-style: none;
+        }
         .icon__file{
           font-size: 1.3rem;
           position: absolute;
@@ -167,27 +165,28 @@
           right: 10px;
           cursor: pointer;
           .image{
-            color: black;
+          color: black;
           }
           .image_file{
             display: none;
           }
         }
-      }
-      &__send{ 
+      }  
+      .send__btn{  
         width: 100px;
         height: 50px;
         padding: 0 30px;
         margin-left: 15px;
         background-color: #38aef0;
         cursor: pointer;
-        .send__btn{
         line-height: 50px;
         text-decoration: none;
         color: white;
         font-weight: bold;
-        }
       }
-    }
+    
   }  
+}
+.new_message{
+  display: flex;
 }
