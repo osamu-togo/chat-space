@@ -9,23 +9,10 @@
     .main_chat__group-info__edit
       = link_to edit_group_path(@group), class: "edit__btn" do
         Edit
+        
   .main_chat__message-list
-    .main_chat__message-list__message
-      .main_chat__message-list__message__info
-        .main_chat__message-list__message__info__taker
-          吾輩
-        .main_chat__message-list__message__info__date
-          2020/12/12
-      .main_chat__message-list__message__text
-        蝋人形にしてやろうかー
-    .main_chat__message-list__message
-      .main_chat__message-list__message__info
-        .main_chat__message-list__message__info__taker
-          吾輩
-        .main_chat__message-list__message__info__date
-          2020/12/12
-      .main_chat__message-list__message__text
-        蝋人形にしてやろうかー
+    = render @messages
+
   .main_chat__message-form 
     = form_for [@group, @message] do |f|
       .main_chat__message-form__input
@@ -34,5 +21,3 @@
           = fa_icon 'image', class: 'image'
           = f.file_field :image, id: "message_image", class: "image_file"
       = f.submit 'Send', class: "send__btn" 
-.messages
-  = render @messages
