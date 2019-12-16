@@ -76,6 +76,7 @@
   background-color: #ffffff;
   height: 100vh;
   width: calc(100vw - 300px);
+  overflow: scroll;
   &__group-info{
     background-color: #ffffff;
     height: 100px;
